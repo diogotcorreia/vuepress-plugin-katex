@@ -1,11 +1,12 @@
 # vuepress-plugin-katex
-Katex plugin for VuePress
+
+Katex plugin for VuePress (fork by Diogo Correia)
 
 ## Installation
 
 ```shell
-yarn add -D @maginapp/vuepress-plugin-katex
-# or npm install -D @maginapp/vuepress-plugin-katex
+yarn add -D @diogotc/vuepress-plugin-katex
+# or npm install -D @diogotc/vuepress-plugin-katex
 ```
 
 ## Usage
@@ -14,47 +15,44 @@ yarn add -D @maginapp/vuepress-plugin-katex
 
 ```js
 module.exports = {
-    // ...
-    plugins: {
-        '@maginapp/katex': {
-          delimiters: 'dollars'
-        }
+  // ...
+  plugins: {
+    "@diogotc/katex": {
+      delimiters: "dollars",
     },
-    // or
-    plugins: {
-        '@maginapp/vuepress-plugin-katex': {
-          delimiters: 'dollars'
-        }
+  },
+  // or
+  plugins: {
+    "@diogotc/vuepress-plugin-katex": {
+      delimiters: "dollars",
     },
-    // ...
-}
+  },
+  // ...
+};
 
 // or
 
 module.exports = [
-    ['@maginapp/vuepress-plugin-katex', { delimiters: 'dollars' }],
-    // or
-    ['@maginapp/katex', { delimiters: 'dollars' }],
-]
-
+  ["@diogotc/vuepress-plugin-katex", { delimiters: "dollars" }],
+  // or
+  ["@diogotc/katex", { delimiters: "dollars" }],
+];
 ```
 
-### options
+### Options
 
-#### delimiters
+#### Delimiters
 
-* type: `string`
-* default: `dollars`
+- type: `string`
+- default: `dollars`
 
-User setting delimiters, [show more](https://github.com/goessner/markdown-it-texmath#features)
+More settings at [the `markdown-it-texmath` repository](https://github.com/goessner/markdown-it-texmath#features).
 
 ### `dollars` example
 
 You can use render latex mathematical expressions [KaTeX](https://khan.github.io/KaTeX/):
 
-Gamma公式展示 $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ 是通过欧拉积分
-
-* inline
+- inline
 
 $\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.$
 
@@ -62,7 +60,7 @@ $\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.$
 $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$
 ```
 
-* display
+- display
 
 $$
 \Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
@@ -74,23 +72,17 @@ $$
 $$
 ```
 
-### vue components
+### Vue components
 
-* `Eq.vue`: using for inline
+- `Eq.vue`: used for inline KaTeX
 
-* `Eqn.vue`: using for block
+- `Eqn.vue`: used for block KaTeX
 
-## Projects Using `@maginapp/vuepress-plugin-katex`
+## Projects used in `@diogotc/vuepress-plugin-katex`
 
-* [katex](https://github.com/KaTeX/KaTeX)
-* [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath)
+- [katex](https://github.com/KaTeX/KaTeX)
+- [markdown-it-texmath](https://github.com/goessner/markdown-it-texmath)
 
-## records
+## Changelog
 
-* v1.0.5 init version / 初始版本
-* v1.0.6 add component:`Eq`,`Eqn` / 添加 Eq Eqn 初始组件
-* v1.0.7 fix: `Eqn` dispaly center /  修复display + equation number 模式下Eqn组件不居中问题
-* v1.0.8 fix: Vue automatically removes spaces from templates / 修复vue自动去除模板中空格问题
-* v1.0.9 style: add custom.css / 添加自定义样式文件
-* v1.0.10 fix: delete globalUIComponents / 修复globalUIComponents 导致的底部样式问题
-* v1.0.11 fix: modify `README` usage / 修复 `README` 示例错误
+v2.0.0: Forked from @maginapp/vuepress-plugin-katex and upgraded dependencies.

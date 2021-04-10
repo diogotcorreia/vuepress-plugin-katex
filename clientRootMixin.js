@@ -1,5 +1,5 @@
-import './css/katex.min.css'
-import './css/texmath.css'
-import './css/custom.css'
+import "katex/dist/katex.min.css";
+import "markdown-it-texmath/css/texmath.css";
+import "./css/custom.css";
 
-export default {}
+export default {};
